@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Products - MUJI 無印良品</title>
+  </head>
+  <body class="bg-amber-50 text-neutral-800">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full bg-amber-50/80 backdrop-blur-md z-50 border-b border-neutral-200/50"
+    >
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div
+            class="flex items-center gap-3 cursor-pointer"
+            onclick="navigateTo('index.html')"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-neutral-700"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 4c5.333 1.333 10.667 1.333 16 0" />
+              <path d="M4 8h16" />
+              <path d="M12 5v3" />
+              <path d="M18 4.5v15.5" />
+              <path d="M6 4.5v15.5" />
+            </svg>
+            <span class="text-xl font-light text-neutral-700 tracking-wide"
+              >MUJI 無印良品</span
+            >
+          </div>
+
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              href="products.html"
+              class="nav-link text-neutral-900 font-medium"
+              >Products</a
+            >
+            <a
+              href="about.html"
+              class="nav-link text-neutral-600 hover:text-neutral-900 transition-colors duration-200 font-light"
+              >About</a
+            >
+            <a
+              href="contact.html"
+              class="nav-link text-neutral-600 hover:text-neutral-900 transition-colors duration-200 font-light"
+              >Contact</a
+            >
+            <a
+              href="checkout.html"
+              class="nav-link text-neutral-600 hover:text-neutral-900 transition-colors duration-200 font-light"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 5H3m4 8v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6"
+                /></svg
+            ></a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button
+            class="md:hidden p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-200"
+            id="mobile-menu-btn"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        class="fixed top-0 left-0 h-full w-64 bg-amber-50 shadow-2xl transform -translate-x-full transition-transform duration-300 z-50 md:hidden"
+        id="mobile-menu"
+      >
+        <div class="p-6 border-b border-neutral-200">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-neutral-700"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 4c5.333 1.333 10.667 1.333 16 0" />
+                <path d="M4 8h16" />
+                <path d="M12 5v3" />
+                <path d="M18 4.5v15.5" />
+                <path d="M6 4.5v15.5" />
+              </svg>
+              <span class="text-lg font-light text-neutral-700 tracking-wide"
+                >MUJI</span
+              >
+            </div>
+            <button
+              class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-200"
+              id="close-mobile-menu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="p-6 bg-amber-50">
+          <nav class="space-y-6">
+            <a
+              href="products.html"
+              class="flex text-lg font-light text-neutral-800 hover:text-neutral-600 transition-colors duration-200"
+              >Products</a
+            >
+            <a
+              href="about.html"
+              class="block text-lg font-light text-neutral-800 hover:text-neutral-600 transition-colors duration-200"
+              >About</a
+            >
+            <a
+              href="contact.html"
+              class="block text-lg font-light text-neutral-800 hover:text-neutral-600 transition-colors duration-200"
+              >Contact</a
+            >
+            <a
+              href="checkout.html"
+              class="flex flex-row text-lg font-light text-neutral-800 hover:text-neutral-600 transition-colors duration-200 gap-2 hover:bg-neutral-100 rounded-lg p-4"
+              id="mobile-cart-toggle"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                class="mt-1"
+              >
+                <path
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 5H3m4 8v6a2 2 0 0 0 2 2h8a2 2 0 0 2-2v-6"
+                />
+              </svg>
+              <span class="text-lg font-light text-neutral-800 ml-1"
+                >Shopping Cart</span
+              >
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Mobile menu overlay -->
+      <div
+        class="fixed inset-0 bg-black/20 opacity-0 pointer-events-none transition-opacity duration-300 z-40 md:hidden"
+        id="mobile-menu-overlay"
+      ></div>
+    </nav>
+
+    <!-- Products Header -->
+    <section class="pt-24 pb-12 px-6">
+      <div class="max-w-7xl mx-auto">
+        <h1 class="text-5xl font-light text-neutral-800 mb-6">Products</h1>
+        <p class="text-lg text-neutral-600 font-light max-w-2xl">
+          Discover our complete collection of thoughtfully designed products for
+          everyday living.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="px-6 mb-12">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-wrap gap-4 items-center">
+          <span class="text-neutral-600 font-light">Filter by:</span>
+          <button
+            class="filter-btn active px-4 py-2 border border-neutral-300 hover:bg-neutral-100 transition-colors duration-200 font-light"
+            data-category="all"
+          >
+            All
+          </button>
+          <button
+            class="filter-btn px-4 py-2 border border-neutral-300 hover:bg-neutral-100 transition-colors duration-200 font-light"
+            data-category="home"
+          >
+            Home
+          </button>
+          <button
+            class="filter-btn px-4 py-2 border border-neutral-300 hover:bg-neutral-100 transition-colors duration-200 font-light"
+            data-category="office"
+          >
+            Office
+          </button>
+          <button
+            class="filter-btn px-4 py-2 border border-neutral-300 hover:bg-neutral-100 transition-colors duration-200 font-light"
+            data-category="storage"
+          >
+            Storage
+          </button>
+          <button
+            class="filter-btn px-4 py-2 border border-neutral-300 hover:bg-neutral-100 transition-colors duration-200 font-light"
+            data-category="textiles"
+          >
+            Textiles
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="px-6 pb-20">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          id="products-grid"
+        >
+          <!-- Products will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div
+      class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50"
+      id="cart-sidebar"
+    >
+      <div class="p-6 border-b border-neutral-200">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-light text-neutral-800">Shopping Cart</h3>
+          <button
+            class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-200"
+            id="close-cart"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex-1 overflow-y-auto p-6" id="cart-items">
+        <p class="text-neutral-500 text-center py-8" id="empty-cart-message">
+          Your cart is empty
+        </p>
+      </div>
+
+      <div
+        class="border-t border-neutral-200 p-6"
+        id="cart-footer"
+        style="display: none"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-lg font-light">Total:</span>
+          <span class="text-lg font-medium" id="cart-total">¥0</span>
+        </div>
+        <button
+          class="w-full bg-neutral-800 text-white py-3 hover:bg-neutral-700 transition-colors duration-200 font-light tracking-wide"
+          id="checkout-btn"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="fixed inset-0 bg-black/20 opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+      id="cart-overlay"
+    ></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

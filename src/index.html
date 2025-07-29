@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>MUJI 無印良品 - Simple, Quality Living</title>
+  </head>
+  <body class="bg-amber-50 text-neutral-800 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full bg-amber-50/80 backdrop-blur-md z-50 border-b border-neutral-200/50 transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div
+            class="flex items-center gap-3 cursor-pointer"
+            onclick="navigateTo('index.html')"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-neutral-700"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 4c5.333 1.333 10.667 1.333 16 0" />
+              <path d="M4 8h16" />
+              <path d="M12 5v3" />
+              <path d="M18 4.5v15.5" />
+              <path d="M6 4.5v15.5" />
+            </svg>
+            <span class="text-xl font-light text-neutral-700 tracking-wide"
+              >MUJI 無印良品</span
+            >
+          </div>
+
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              href="products.html"
+              class="nav-link text-neutral-600 hover:text-neutral-900 transition-colors duration-200 font-light"
+              >Products</a
+            >
+            <a
+              href="about.html"
+              class="nav-link text-neutral-600 hover:text-neutral-900 transition-colors duration-200 font-light"
+              >About</a
+            >
+            <a
+              href="contact.html"
+              class="nav-link text-neutral-600 hover:text-neutral-900 transition-colors duration-200 font-light"
+              >Contact</a
+            >
+
+            <a
+              href="checkout.html"
+              class="nav-link text-neutral-600 hover:text-neutral-900 transition-colors duration-200 font-light"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 5H3m4 8v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6"
+                /></svg
+            ></a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button
+            class="md:hidden p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-200"
+            id="mobile-menu-btn"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        class="fixed top-0 left-0 h-full w-64 bg-amber-50 shadow-2xl transform -translate-x-full transition-transform duration-300 z-50 md:hidden"
+        id="mobile-menu"
+      >
+        <div class="p-6 border-b border-neutral-200">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-neutral-700"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 4c5.333 1.333 10.667 1.333 16 0" />
+                <path d="M4 8h16" />
+                <path d="M12 5v3" />
+                <path d="M18 4.5v15.5" />
+                <path d="M6 4.5v15.5" />
+              </svg>
+              <span class="text-lg font-light text-neutral-700 tracking-wide"
+                >MUJI</span
+              >
+            </div>
+            <button
+              class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-200"
+              id="close-mobile-menu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="p-6 bg-amber-50">
+          <nav class="space-y-6">
+            <a
+              href="products.html"
+              class="flex text-lg font-light text-neutral-800 hover:text-neutral-600 transition-colors duration-200"
+              >Products</a
+            >
+            <a
+              href="about.html"
+              class="block text-lg font-light text-neutral-800 hover:text-neutral-600 transition-colors duration-200"
+              >About</a
+            >
+            <a
+              href="contact.html"
+              class="block text-lg font-light text-neutral-800 hover:text-neutral-600 transition-colors duration-200"
+              >Contact</a
+            >
+            <a
+              href="checkout.html"
+              class="flex flex-row text-lg font-light text-neutral-800 hover:text-neutral-600 transition-colors duration-200 gap-2 hover:bg-neutral-100 rounded-lg p-4"
+              id="mobile-cart-toggle"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                class="mt-1"
+              >
+                <path
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 5H3m4 8v6a2 2 0 0 0 2 2h8a2 2 0 0 2-2v-6"
+                />
+              </svg>
+              <span class="text-lg font-light text-neutral-800 ml-1"
+                >Shopping Cart</span
+              >
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Mobile menu overlay -->
+      <div
+        class="fixed inset-0 bg-black/20 opacity-0 pointer-events-none transition-opacity duration-300 z-40 md:hidden"
+        id="mobile-menu-overlay"
+      ></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-amber-50 to-amber-50"
+      ></div>
+      <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+        <h1
+          class="text-6xl md:text-8xl font-extralight text-neutral-800 mb-6 opacity-0 translate-y-8 animate-fade-in-up"
+        >
+          Simple.<br />
+          <span class="text-neutral-600">Quality.</span><br />
+          <span class="text-neutral-500">Living.</span>
+        </h1>
+        <p
+          class="text-lg md:text-xl text-neutral-600 font-light mb-12 opacity-0 translate-y-8 animate-fade-in-up-delay"
+        >
+          Discover products designed for a simpler way of life
+        </p>
+        <button
+          class="bg-neutral-800 text-white px-8 py-4 hover:bg-neutral-700 transition-all duration-300 font-light tracking-wide opacity-0 translate-y-8 animate-fade-in-up-delay-2 hover:scale-105 transform"
+          onclick="smoothScrollTo('#featured')"
+        >
+          Explore Collection
+        </button>
+      </div>
+
+      <!-- Floating elements -->
+      <div
+        class="absolute top-20 left-10 w-2 h-2 bg-neutral-300 rounded-full animate-float"
+      ></div>
+      <div
+        class="absolute bottom-32 right-16 w-3 h-3 bg-amber-200 rounded-full animate-float-delay"
+      ></div>
+      <div
+        class="absolute top-1/2 left-1/4 w-1 h-1 bg-neutral-400 rounded-full animate-float-delay-2"
+      ></div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="featured" class="py-20 px-6">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-light text-neutral-800 mb-16 text-center">
+          Featured Products
+        </h2>
+
+        <!-- Bento Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-fr lg:h-[600px]"
+        >
+          <!-- Large featured item -->
+          <div
+            class="sm:col-span-2 lg:col-span-2 lg:row-span-2 group cursor-pointer product-card"
+            data-product-id="1"
+          >
+            <div
+              class="h-full min-h-[300px] lg:h-full bg-white border border-neutral-200 overflow-hidden hover:shadow-lg transition-all duration-500 hover:scale-[1.02]"
+            >
+              <div
+                class="h-2/3 bg-gradient-to-br from-amber-50 to-amber-50 flex items-center justify-center p-4"
+              >
+                <img
+                  src="deskorg.png"
+                  alt="Desk Organizer"
+                  class="w-3/4 h-90 object-cover"
+                />
+              </div>
+              <div class="p-4 lg:p-6 h-1/3 flex flex-col justify-center">
+                <h3 class="text-lg lg:text-xl font-light text-neutral-800 mb-2">
+                  Minimalist Desk Organizer
+                </h3>
+                <p class="text-neutral-600 text-sm mb-3">
+                  Clean lines, natural materials
+                </p>
+                <p class="text-lg text-neutral-800">¥2,900</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Medium items -->
+          <div class="group cursor-pointer product-card" data-product-id="2">
+            <div
+              class="h-full min-h-[250px] bg-white border border-neutral-200 overflow-hidden hover:shadow-lg transition-all duration-500 hover:scale-[1.02]"
+            >
+              <div
+                class="h-2/3 bg-gradient-to-br from-amber-50 to-amber-50 flex items-center justify-center p-4"
+              >
+                <img
+                  src="cottonbox.png"
+                  alt="Storage Box"
+                  class="h-43 w-60 object-cover"
+                />
+              </div>
+              <div class="p-4">
+                <h3
+                  class="text-base lg:text-lg font-light text-neutral-800 mb-1"
+                >
+                  Cotton Storage Box
+                </h3>
+                <p class="text-neutral-800">¥1,900</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="group cursor-pointer product-card" data-product-id="3">
+            <div
+              class="h-full min-h-[250px] bg-white border border-neutral-200 overflow-hidden hover:shadow-lg transition-all duration-500 hover:scale-[1.02]"
+            >
+              <div
+                class="h-2/3 bg-gradient-to-br from-amber-50 to-amber-50 flex items-center justify-center p-4"
+              >
+                <img
+                  src="penholder.png"
+                  alt="Pen Holder"
+                  class="h-43 w-60 object-cover"
+                />
+              </div>
+              <div class="p-4">
+                <h3
+                  class="text-base lg:text-lg font-light text-neutral-800 mb-1"
+                >
+                  Bamboo Pen Holder
+                </h3>
+                <p class="text-neutral-800">¥1,200</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wide item -->
+          <div
+            class="sm:col-span-2 lg:col-span-2 group cursor-pointer product-card"
+            data-product-id="4"
+          >
+            <div
+              class="h-full min-h-[200px] bg-white border border-neutral-200 overflow-hidden hover:shadow-lg transition-all duration-500 hover:scale-[1.02]"
+            >
+              <div class="flex flex-col sm:flex-row h-full">
+                <div
+                  class="w-full sm:w-1/2 h-48 sm:h-full bg-gradient-to-br from-amber-50 to-amber-50 flex items-center justify-center p-4"
+                >
+                  <img
+                    src="tablerunner.png"
+                    alt="Table Runner"
+                    class="w-70 h-60 object-cover"
+                  />
+                </div>
+                <div
+                  class="w-full sm:w-1/2 p-4 lg:p-6 flex flex-col justify-center"
+                >
+                  <h3
+                    class="text-lg lg:text-xl font-light text-neutral-800 mb-2"
+                  >
+                    Linen Table Runner
+                  </h3>
+                  <p class="text-neutral-600 text-sm mb-3">
+                    Natural, sustainable materials
+                  </p>
+                  <p class="text-lg text-neutral-800">¥3,400</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <button
+            class="border border-neutral-300 px-8 py-3 hover:bg-neutral-100 transition-all duration-300 font-light tracking-wide hover:scale-105 transform"
+            onclick="navigateTo('products.html')"
+          >
+            View All Products
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="py-20 px-6 bg-gradient-to-br from-amber-50 to-amber-50">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-light text-neutral-800 mb-8">
+          Our Philosophy
+        </h2>
+        <p class="text-lg text-neutral-600 font-light leading-relaxed mb-8">
+          MUJI is not a brand whose value rests in the object itself, but rather
+          in the relationship between the object and the user. We believe in
+          creating products that are simple, functional, and beautiful in their
+          restraint.
+        </p>
+        <button
+          class="border border-neutral-300 px-8 py-3 hover:bg-white transition-all duration-300 font-light tracking-wide hover:scale-105 transform"
+          onclick="navigateTo('about.html')"
+        >
+          Learn More
+        </button>
+      </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div
+      class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50"
+      id="cart-sidebar"
+    >
+      <div class="p-6 border-b border-neutral-200">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-light text-neutral-800">Shopping Cart</h3>
+          <button
+            class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-200"
+            id="close-cart"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex-1 overflow-y-auto p-6" id="cart-items">
+        <p class="text-neutral-500 text-center py-8" id="empty-cart-message">
+          Your cart is empty
+        </p>
+      </div>
+
+      <div
+        class="border-t border-neutral-200 p-6"
+        id="cart-footer"
+        style="display: none"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-lg font-light">Total:</span>
+          <span class="text-lg font-medium" id="cart-total">¥0</span>
+        </div>
+        <button
+          class="w-full bg-neutral-800 text-white py-3 hover:bg-neutral-700 transition-colors duration-200 font-light tracking-wide"
+          id="checkout-btn"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+
+    <!-- Cart overlay -->
+    <div
+      class="fixed inset-0 bg-black/20 opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+      id="cart-overlay"
+    ></div>
+
+    <!-- Footer -->
+    <div class="mt-8 text-center">
+      <p class="text-md text-dark-500 font-medium">
+        made with
+        <span class="text-neutral-800 mx-0.5">♥</span>
+        by
+        <a
+          href="https://github.com/SurajKarmakar1"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-black hover:text-slate-600 dark:hover:text-slate-300 transition-colors font-semibold underline"
+        >
+          @SurajKarmakar
+        </a>
+      </p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

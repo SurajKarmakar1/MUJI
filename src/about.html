@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>About - MUJI 無印良品</title>
+  </head>
+  <body class="bg-amber-50 text-neutral-800">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full bg-amber-50/80 backdrop-blur-md z-50 border-b border-neutral-200/50"
+    >
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div
+            class="flex items-center gap-3 cursor-pointer"
+            onclick="navigateTo('index.html')"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-neutral-700"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 4c5.333 1.333 10.667 1.333 16 0" />
+              <path d="M4 8h16" />
+              <path d="M12 5v3" />
+              <path d="M18 4.5v15.5" />
+              <path d="M6 4.5v15.5" />
+            </svg>
+            <span class="text-xl font-light text-neutral-700 tracking-wide"
+              >MUJI 無印良品</span
+            >
+          </div>
+
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              href="products.html"
+              class="nav-link text-neutral-600 hover:text-neutral-900 transition-colors duration-200 font-light"
+              >Products</a
+            >
+            <a href="about.html" class="nav-link text-neutral-900 font-medium"
+              >About</a
+            >
+            <a
+              href="contact.html"
+              class="nav-link text-neutral-600 hover:text-neutral-900 transition-colors duration-200 font-light"
+              >Contact</a
+            >
+            <a
+              href="checkout.html"
+              class="nav-link text-neutral-600 hover:text-neutral-900 transition-colors duration-200 font-light"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 5H3m4 8v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6"
+                /></svg
+            ></a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button
+            class="md:hidden p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-200"
+            id="mobile-menu-btn"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        class="fixed top-0 left-0 h-full w-64 bg-amber-50 shadow-2xl transform -translate-x-full transition-transform duration-300 z-50 md:hidden"
+        id="mobile-menu"
+      >
+        <div class="p-6 border-b border-neutral-200">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-neutral-700"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 4c5.333 1.333 10.667 1.333 16 0" />
+                <path d="M4 8h16" />
+                <path d="M12 5v3" />
+                <path d="M18 4.5v15.5" />
+                <path d="M6 4.5v15.5" />
+              </svg>
+              <span class="text-lg font-light text-neutral-700 tracking-wide"
+                >MUJI</span
+              >
+            </div>
+            <button
+              class="p-2 hover:bg-neutral-100 rounded-lg transition-colors duration-200"
+              id="close-mobile-menu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="p-6 bg-amber-50">
+          <nav class="space-y-6">
+            <a
+              href="products.html"
+              class="flex text-lg font-light text-neutral-800 hover:text-neutral-600 transition-colors duration-200"
+              >Products</a
+            >
+            <a
+              href="about.html"
+              class="block text-lg font-light text-neutral-800 hover:text-neutral-600 transition-colors duration-200"
+              >About</a
+            >
+            <a
+              href="contact.html"
+              class="block text-lg font-light text-neutral-800 hover:text-neutral-600 transition-colors duration-200"
+              >Contact</a
+            >
+            <a
+              href="checkout.html"
+              class="flex flex-row text-lg font-light text-neutral-800 hover:text-neutral-600 transition-colors duration-200 gap-2 hover:bg-neutral-100 rounded-lg p-4"
+              id="mobile-cart-toggle"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                class="mt-1"
+              >
+                <path
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4m1.6 8L6 5H3m4 8v6a2 2 0 0 0 2 2h8a2 2 0 0 2-2v-6"
+                />
+              </svg>
+              <span class="text-lg font-light text-neutral-800 ml-1"
+                >Shopping Cart</span
+              >
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Mobile menu overlay -->
+      <div
+        class="fixed inset-0 bg-black/20 opacity-0 pointer-events-none transition-opacity duration-300 z-40 md:hidden"
+        id="mobile-menu-overlay"
+      ></div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="pt-24 pb-20 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-6xl font-light text-neutral-800 mb-8">About MUJI</h1>
+        <p class="text-xl text-neutral-600 font-light leading-relaxed">
+          MUJI, meaning "no brand, quality goods," embodies the Japanese
+          aesthetic of simplicity and functionality.
+        </p>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="py-20 px-6 bg-gradient-to-br from-amber-50 to-amber-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-4xl font-light text-neutral-800 mb-8">
+              Our Philosophy
+            </h2>
+            <div class="space-y-6 text-neutral-600 font-light leading-relaxed">
+              <p>
+                MUJI was born in Japan in 1980 as a reaction against the
+                material excess of the times. We believe in creating products
+                that are simple, functional, and beautiful in their restraint.
+              </p>
+              <p>
+                Our design philosophy centers on three key principles:
+                simplicity, functionality, and sustainability. We strip away the
+                unnecessary to reveal the essential.
+              </p>
+              <p>
+                Every MUJI product is designed to fit seamlessly into daily
+                life, enhancing rather than overwhelming the spaces and routines
+                of our customers.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white p-8 border border-neutral-200">
+            <img
+              src="philosophy.png"
+              alt="MUJI Philosophy"
+              class="w-full h-80 object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-light text-neutral-800 mb-16 text-center">
+          Our Values
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-neutral-200 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-light text-neutral-800 mb-4">Simplicity</h3>
+            <p class="text-neutral-600 font-light">
+              We eliminate the unnecessary to focus on what truly matters in
+              design and function.
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-neutral-200 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-light text-neutral-800 mb-4">
+              Functionality
+            </h3>
+            <p class="text-neutral-600 font-light">
+              Every product serves a purpose and enhances daily life through
+              thoughtful design.
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-neutral-200 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                />
+              </svg>
+            </div>
+            <h3 class="text-xl font-light text-neutral-800 mb-4">
+              Sustainability
+            </h3>
+            <p class="text-neutral-600 font-light">
+              We create products that last, using natural materials and
+              responsible manufacturing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
